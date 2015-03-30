@@ -9,15 +9,17 @@
         </span>
       </div>
     </div>
-  </form>
+
 
   <div ui-sortable ng-model="todos">
     <p class="input-group" ng-repeat="todo in todos track by $index" style="padding:5px 10px; cursor: move;">
-      <input type="checkbox">
+      <input type="checkbox" name="liked" ng-changed="checkLike">
       <input type="text" ng-model="todo" class="form-control">
       <span class="input-group-btn">
         <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">delete</button>
       </span>
+      <p ng-model="todos" type="text">Items to be done: {{todos.length}}</p>
     </p>
   </div>
+</form>
 </main>
